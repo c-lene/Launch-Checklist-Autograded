@@ -144,7 +144,33 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
  }
  
 
+// For Fun - Added a Reset button
+function resetButton() {
+    let listedPlanets;
 
+    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
+    let listedPlanetsResponse = myFetch();
+
+    listedPlanetsResponse.then(function (result) {
+        listedPlanets = result;
+        console.log(listedPlanets);
+
+    }).then(function () {
+        console.log(listedPlanets);
+
+        
+        let planetSelected = pickPlanet(listedPlanets);
+        console.log(planetSelected);
+
+        // Displays the Mission Destination
+        addDestinationInfo(document, planetSelected.name, planetSelected.diameter, planetSelected.star, planetSelected.distance, planetSelected.moons, planetSelected.image);
+    });
+
+
+    
+    
+
+}
 
 
 
@@ -176,3 +202,5 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
  module.exports.formSubmission = formSubmission;
  module.exports.pickPlanet = pickPlanet; 
  module.exports.myFetch = myFetch;
+ 
+ module.exports.resetButton = resetButton;
