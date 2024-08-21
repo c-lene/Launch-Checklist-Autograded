@@ -5,6 +5,9 @@ window.addEventListener("load", function() {
     
     // Declaring & Initializing Form element from DOM
     const form = document.querySelector("form");
+
+    
+    
     
     
     // Using Event Listener to listen for a 'submit' event
@@ -44,4 +47,21 @@ window.addEventListener("load", function() {
         // Displays the Mission Destination
         addDestinationInfo(document, planetSelected.name, planetSelected.diameter, planetSelected.star, planetSelected.distance, planetSelected.moons, planetSelected.image);
     });
+
+
+    // For fun - I added a Reset button
+    const buttonReset = document.getElementById("formReset");
+    buttonReset.addEventListener("click", function() {
+        console.log("Reset Button clicked");
+
+        let resetResponse = window.confirm("Are you sure you want to Start Over?");
+
+        if (resetResponse) {
+            resetButton();
+        }
+
+
+        
+    });
+
  });
