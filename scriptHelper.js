@@ -144,6 +144,8 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
  }
  
 
+
+ 
 // For Fun - Added a Reset button
 function resetButton() {
     let listedPlanets;
@@ -165,11 +167,6 @@ function resetButton() {
         // Displays the Mission Destination
         addDestinationInfo(document, planetSelected.name, planetSelected.diameter, planetSelected.star, planetSelected.distance, planetSelected.moons, planetSelected.image);
     });
-
-
-    
-    
-
 }
 
 
