@@ -145,12 +145,30 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
  
 
 
- 
+
 // For Fun - Added a Reset button
 function resetButton() {
-    let listedPlanets;
+    
+    // Resets launchStatus & faultyItems
+    let pilotStatus = document.getElementById("pilotStatus");
+    let copilotStatus = document.getElementById("copilotStatus");
+    let fuelStatus = document.getElementById("fuelStatus");
+    let cargoStatus = document.getElementById("cargoStatus");
+    let launchStatus = document.getElementById("launchStatus");
+    let list = document.getElementById("faultyItems");
 
-    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
+    launchStatus.style.color = "";
+    launchStatus.innerText = "Awaiting Information Before Launch";
+    list.style.visibility = "hidden";
+    pilotStatus.innerText = "Pilot Ready";
+    copilotStatus.innerText = "Co-pilot Ready";
+    fuelStatus.innerText = "Fuel level high enough for launch";
+    cargoStatus.innerText = "Cargo mass low enough for launch";
+    
+
+    
+    // Resets the Random Selected Planets
+    let listedPlanets;
     let listedPlanetsResponse = myFetch();
 
     listedPlanetsResponse.then(function (result) {
