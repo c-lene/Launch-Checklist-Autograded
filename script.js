@@ -7,9 +7,6 @@ window.addEventListener("load", function() {
     const form = document.querySelector("form");
 
     
-    
-    
-    
     // Using Event Listener to listen for a 'submit' event
     form.addEventListener("submit", function(event) {
         
@@ -59,9 +56,6 @@ window.addEventListener("load", function() {
         if (resetResponse) {
             resetButton();
         }
-
-
-        
     });
 
  });
